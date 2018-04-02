@@ -18,17 +18,25 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>
+#include <sstream> // for std::stringstream
 
 using namespace std;
 
 const int NO = 0;
 const int YES = 1;
 
-int main(){
+int main(int agrc,char *argv[]){
 	// initialize variables
 	int done, numRepeats = 10000;
-	unsigned int number, guess_value, prev_max, prev_min, randMaximum = 1000000, numGuesses[numRepeats];
+	unsigned int randMaximum;
+	unsigned int number, guess_value, prev_max, prev_min, numGuesses[numRepeats];
 	float meanNumGuesses, varNumGuesses;
+
+	// convert the character array argv[1] to an unsigned int
+	stringstream convert(argv[1]);
+	if (!(convert >> randMaximum)) {
+		randMaximum = 100000;
+	}
 
 	// tell the user what the file does
 	printf("Generate random numbers between 0 and %i.\n",randMaximum);

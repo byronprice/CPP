@@ -1,9 +1,9 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12.1)
 
 SET (src
-    operators.cpp
+    functions.cpp
 )
 
-ADD_EXECUTABLE (operators
+ADD_EXECUTABLE (functions
     ${src}
 )
